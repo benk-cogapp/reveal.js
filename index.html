@@ -39,16 +39,16 @@
 		<div class="reveal">
 
 			<div class="slides">
-
+	
 				<section>
 					<h2>Cogapp Open Studios</h2>
 				</section>
 
 				<section>
 					<p>Diacritics and ligatures and glyphs&mdash;oh my!</p>
+					<p>BEM and CSS</p>
 					<p>GlusterF*ck&mdash;avoiding a $10,000 mistake</p>
 					<p>OWASP top ten</p>
-					<p>BEM and CSS</p>
 					<p>Accessibility in web design</p>
 				</section>
 
@@ -202,7 +202,146 @@
 						Any questions
 					</aside>
 				</section>
+				<!-- /BEN -->
 
+				<!-- JON -->
+				<section>
+					<h1>Not !important;</h1>
+					<h3>Some thoughts on BEM and CSS</h3>
+					<p>
+						<small>A lightning talk by <a href="http://superbland.co.uk">Jon White</a> / <a href="http://twitter.com/superbland">@superbland</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>CSS is really good when...</h2>
+					<ol>
+						<li class="fragment">Make changes without breaking stuff</li>
+					  <li class="fragment">You can easily tell what a class does</li>
+					  <li class="fragment">Figuring out what does what is pretty easy</li>
+					  <li class="fragment">I write some new styles and it works</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>CSS is not so good when...</h2>
+					<ol>
+						<li class="fragment">Changes that solve one problem create another</li>
+						<li class="fragment">Unnecessary weight in the inheritance chain</li>
+					  <li class="fragment">Developers who prefer brevity over clarity</li>
+					  <li class="fragment">I need to resort to !important; rules or concoct clever inheritance hacks</li>
+					</ol>
+				</section>
+
+				<section>
+					<h1>How things get out of hand</h1>
+					<h2>Abridged version</h2>
+			    <aside class="notes">
+			        <ul>
+			        	<li>This is when things can get a bit crazy.</li>
+			        	<li>An anecdotal scenario for your consideration</li>
+			        </ul>
+			    </aside>
+				</section>
+
+				<section>
+					<h1>BURGER</h1>
+					<img src="/images/burger.png" />
+				</section>
+
+				<section>
+					<h2>The Burger Demo</h2>
+					<h3>Nice, terse, 'semantic' class names</h3>
+					<img src="images/code01.png" />
+				</section>
+		
+				<section>
+					<img src="images/code02-spliced.png" />
+				</section>
+
+				<section>
+					<h1>But...</h1>
+					<img class="fragment" src="images/broken-hotdog.jpg" />
+				</section>
+
+				<section>
+					<h2>The Burger Demo</h2>
+					<h3>I can fix this!</h3>
+
+			    <aside class="notes">
+			        <ul>
+			        	<li>Lets add some classes to make sure I only change the burger</li>
+			        	<li>OK, fixed. Now I can relax and forget about it.</li>
+			        	<li>Rinse and repeat 50 times</li>
+			        	<li>You're the first person to do this, but you probably won't be the last</li>
+			        </ul>
+			    </aside>
+
+				</section>
+
+				<section>
+					<img src="images/code03-spliced.png" />
+				</section>
+
+				<section>
+					<h1>I have a better idea...</h1>
+					<h2 class="fragment">Just don't do that?</h2>
+				</section>
+
+				<section>
+					<h1>BEM</h1>
+					<ul>
+						<li class="fragment">Blocks - Components not bound my context</li>
+						<li class="fragment">Elements - Belonging to a block (double underscores __)</li>
+						<li class="fragment">Modifiers - Used to specify variations on blocks and elements (double hyphens --)</li>
+					</ul>
+				</section>			
+
+				<section>
+					<h2>The Burger Demo</h2>
+					<h3>1 BEM Burger, coming up!</h3>
+					<img src="images/code04.png" />
+				</section>
+
+				<section>
+					<img src="images/code05-spliced.png" />
+				</section>
+
+
+				<section>
+					<img src="/images/burgers-dogs.jpg" />
+				</section>
+
+				<section data-state="myevent">
+					<h2>BEM is UGLY and I'm not stupid</h2>
+					<img class="subliminal" src="/images/meme-01.jpg" width="400" height="400" style="position:absolute; opacity:0; transform:translate(-50%, -50%);">
+					<ul>
+							<li class="fragment">BEM isn't what most people consider beautiful</li>
+							<li class="fragment">It's all about developer confidence;</li>
+							<li class="fragment">BEM helps you write well structured, easily maintainable, robust CSS that can be easily understood, and that is a good thing.</li>						
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Probably the two most common complaints against BEM notation</li>
+							<li>BEM isn't what most people consider beautiful</li>
+							<li>It's all about developer confidence;</li>
+							<li>BEM helps you write well structured, easily maintainable, robust CSS that can be easily understood, and that is a good thing.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Find out more</h2>
+					<ul>
+						<li><a href="http://cogapp.com/blog/why-we-chose-bem">Why we chose BEM - Cogapp</a></li>
+						<li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">MindBEMding – getting your head ’round BEM syntax - CSSWizardry</a></li>
+						<li><a href="http://www.sitepoint.com/bem-smacss-advice-from-developers/">BEM and SMACSS: Advice From Developers Who’ve Been There - Sitepoint</a></li>
+					</ul>
+				</section>
+				<!-- /JON-->
+
+				<!-- Adrian -->
 				<section>
 					<h1>GlusterF*ck</h1>
 					<h3>Avoiding a $10,000 AWS trap</h3>
@@ -360,7 +499,7 @@
 					<h2>Questions?</h2>
 				</section>
 
-
+				<!-- /ADRIAN -->
 
 
 
@@ -401,6 +540,15 @@
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
+			Reveal.addEventListener('myevent', function(e) {
+				setTimeout(function(){
+					e.path[0].querySelector('img.subliminal').style.opacity = 1;
+					setTimeout(function() {
+						e.path[0].querySelector('img.subliminal').style.opacity = 0;
+					}, 600);
+				}, 2100);
+			});			
 
 		</script>
 	</body>
