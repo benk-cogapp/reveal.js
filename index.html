@@ -204,6 +204,168 @@
 				</section>
 
 				<section>
+					<h1>GlusterF*ck</h1>
+					<h3>Avoiding a $10,000 AWS trap</h3>
+					<p>
+						<small>by Adrian Hindle @Cogapp</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>Qdl.qa</h2>
+					<img width="492" height="276" data-src="images/QDL.png" alt="qdl.qa">
+					<p class="fragment">1M+ pages</p>
+					<p class="fragment">25 servers hosted on AWS</p>
+				</section>
+
+				<section>
+					<h2>What happened?</h2>
+					<p class="fragment">Started receiving different alerts</p>
+					<p class="fragment">Cloudwatch monitoring stopped</p>
+					<p class="fragment">Gluster server stopped working</p>
+				</section>
+
+				<section>
+					<h2>What is GlusterFS</h2>
+					<p class="fragment">Scalable network filesystem</p> 
+					<p class="fragment">
+						<img width="600" height="400" data-src="images/gluster_diag.png" alt="trying to fix">
+					</p>
+				</section>
+
+				<section>
+					<p class="fragment">
+						<img width="360" height="360" data-src="images/somehow.gif" alt="trying to fix">
+					</p>
+				</section>
+
+				<section>
+					<p class="fragment">
+						<img width="600" height="416" data-src="images/panic.gif" alt="trying to fix">
+					</p>
+				</section>
+
+				<section>
+					<h2>Fixing GlusterFS</h2>
+					<p class="fragment">Documentation / IRC / Mailing lists</p>
+					<p class="fragment">Created a test environment</p>
+					<p class="fragment">
+						<img width="350" height="280" data-src="images/trying_to_fix_G.gif" alt="trying to fix">
+					</p>
+				</section>
+
+				<section>
+					<img width="600" height="378" data-src="images/f-this.gif" alt="f-this">
+				</section>
+
+				<section>
+					<h2>New Gluster cluster</h2>
+					<p class="fragment">
+						<img width="400" height="400" data-src="images/ansible.png" alt="ansible">
+					</p>
+				</section>
+
+				<section>
+					<h2>Getting the data</h2>
+					<img width="750" height="256" data-src="images/s3glacier.jpg" alt="s3glacier">
+				</section>
+
+				<section>
+					<h2>How much?</h2>
+					Length of time for retrieval: 4 hours
+					<table>
+						<tbody>
+							<tr>
+								<td>Retrieval Cost</td>
+								<td>$9,900.00</td>
+							</tr>
+							<tr>
+								<td>Transfer Cost</td>
+								<td>$449.91</td>
+							</tr>
+							<tr>
+								<td>Total cost</td>
+								<td>$10,349.91</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>$10,000.00</h2>
+					<img width="432" height="300" data-src="images/wtf.gif" alt="wtf">
+				</section>
+
+				<section>
+					<p class="fragment">
+						<img width="514" height="76" data-src="images/glacier1.png" alt="s3glacier">
+					</p>
+					<p class="fragment">
+						<img width="514" height="76" data-src="images/glacier2.png" alt="s3glacier">
+					</p>
+					<p class="fragment">
+						<img width="514" height="76" data-src="images/glacier3.png" alt="s3glacier">
+					</p>
+					<p class="fragment">
+						<img width="514" height="96" data-src="images/glacier4.png" alt="s3glacier">
+					</p>
+				</section>
+
+				<section>
+					<h2>But</h2>
+					Length of time for retrieval 72 hours
+					<table>
+						<tbody>
+							<tr>
+								<td>Retrieval Cost</td>
+								<td>$547.25</td>
+							</tr>
+							<tr>
+								<td>Transfer Cost</td>
+								<td>$449.91</td>
+							</tr>
+							<tr>
+								<td>Total cost</td>
+								<td>$997.16</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>#!/bin/sh</h2>
+						<p class="fragment" style="text-align: left; line-height: 90%;">List every file in Glacier</p>
+						<p class="fragment" style="text-align: left; line-height: 90%;">Foreach file {</p>
+						<p class="fragment" style="text-align: left; line-height: 90%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start restore</p>
+						<p class="fragment" style="text-align: left; line-height: 90%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pause</p>
+						<p class="fragment" style="text-align: left; line-height: 90%;">}</p>
+				</section>
+
+				<section>
+					<h3>Restore 500,000+ JPEG 2000 (5TB+)</h3>
+					<p class="fragment">Restoration took 4 - 5 days</p>
+					<p class="fragment">Download speed 150 - 200 images/min</p>
+					<p class="fragment">Download ~125 hours</p>
+				</section>
+
+				<section>
+					<h3>The following Monday...</h3>
+					
+					<p class="fragment">
+						<img width="530" height="400" data-src="images/cry.gif" alt="s3glacier">
+					</p>
+				</section>
+
+				<section>
+					<h1>Thank you</h1>
+					<h2>Questions?</h2>
+				</section>
+
+
+
+
+
+
+				<section>
 					<h2>cogapp.com</h2>
 					<h2>@cogapp</h2>
 				</section>
