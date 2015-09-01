@@ -39,7 +39,7 @@
 		<div class="reveal">
 
 			<div class="slides">
-	
+
 				<section>
 					<h2>Cogapp Open Studios</h2>
 				</section>
@@ -59,7 +59,7 @@
 
 				<section>
 					<h2>Transliteration</h2>
-					
+
 					<p class="fragment">Converting one script to another</p>
 					<p class="fragment">Transliteration is not transcription</p>
 					<p class="fragment">Mainly concerned with preserving spelling</p>
@@ -255,7 +255,7 @@
 					<h3>Nice, terse, 'semantic' class names</h3>
 					<img src="images/code01.png" />
 				</section>
-		
+
 				<section>
 					<img src="images/code02-spliced.png" />
 				</section>
@@ -296,7 +296,7 @@
 						<li class="fragment">Elements - Belonging to a block (double underscores __)</li>
 						<li class="fragment">Modifiers - Used to specify variations on blocks and elements (double hyphens --)</li>
 					</ul>
-				</section>			
+				</section>
 
 				<section>
 					<h2>The Burger Demo</h2>
@@ -366,7 +366,7 @@
 
 				<section>
 					<h2>What is GlusterFS</h2>
-					<p class="fragment">Scalable network filesystem</p> 
+					<p class="fragment">Scalable network filesystem</p>
 					<p class="fragment">
 						<img width="600" height="400" data-src="images/gluster_diag.png" alt="trying to fix">
 					</p>
@@ -489,7 +489,7 @@
 
 				<section>
 					<h3>The following Monday...</h3>
-					
+
 					<p class="fragment">
 						<img width="530" height="400" data-src="images/cry.gif" alt="s3glacier">
 					</p>
@@ -501,6 +501,123 @@
 				</section>
 
 				<!-- /ADRIAN -->
+
+				<!-- MATTH -->
+				<section>
+					<h1>Accessibility in web design</h1>
+					<p>matth@cogapp.com</p>
+				</section>
+
+				<section>
+					<section id="fragments">
+						<h3>What is accessibility?</h3>
+						<p class="fragment">Removing barriers that prevent access to website content and functionality</p>
+						<p class="fragment">Inclusivity and diversity</p>
+
+						<aside class="notes">
+							<ul>
+								<li>Same idea as elsewhere</li>
+								<li>Inclusivity and diversity - this sector is very bad at this, we have to get better and foregrounding accessibility helps to raise awareness of this</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h3>How should we think about accessibility?</h3>
+					<p class="fragment">Users are not simply disabled or non-disabled</p>
+					<p class="fragment">There are huge range of disabilities: cognitive, motor, sensory</p>
+					<p class="fragment">Disability may be temporary</p>
+					<p class="fragment">If we make sure websites are accessible everyone benefits</p>
+					<p class="fragment">Legal duties</p>
+					<aside class="notes">
+						<ul>
+							<li>Can't make any assumptions about users</li>
+							<li>Temporary: eg. broken wrist ... or blind and using screen reader</li>
+							<li>A11y testing shouldn't be tacked on to the end of a project but embedded within processes</li>
+							<li>US receipt of public money = Section 508 compliance</li>
+							<li>We need to be careful - National Federation of the Blind v. Target Corp class action $6mill</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>How do we know that a website is accessible?</h3>
+					<p class="fragment">WCAG (Web Content Accessibility Guidelines)</p>
+					<p class="fragment">4 main principles: perceiveable, operable, understandable and robust</p>
+					<p class="fragment">12 guidelines</p>
+					<p class="fragment">65 testable suceess criteria</p>
+					<p class="fragment">A, AA, AAA</p>
+					<p class="fragment">Section 508</p>
+					<aside class="notes">
+						<ul>
+							<li>As a developer not using assistive technology how do we test for accessibility</li>
+							<li>2008 W3C WCAG published by Web Accessibility Initiative (WAI)</li>
+							<li>There are 12 guidelines grouped under four principles (perceiveable, operable, understandable and robust)</li>
+							<li>there are 65 testable suceess criteria covering the guidelines.</li>
+							<li>A - AAA - level of compliance</li>
+							<li>AAA very hard - concerning eg. transcripts of live video and audio</li>
+							<li></li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Some WCAG success criteria</h3>
+					<p class="fragment">Provide text alternatives for non-text content - A</p>
+					<p class="fragment">Links must have descriptive text content - A</p>
+					<p class="fragment">A sign language interpreter is included for recorded media - AAA</p>
+					<p class="fragment">Text to background contrast ratio must be at least 4.5:1 - AA</p>
+					<aside class="notes">
+						<ul>
+							<li>alt text read by screen readers - text representation of visual image</li>
+							<li>Not just developers - designers as well! and producers</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>How do we test accessibility</h3>
+					<p class="fragment">Chrome Accessibility Audit</p>
+					<p class="fragment">WAVE browser plugin</p>
+					<p class="fragment">HTML Codesniffer</p>
+					<aside class="notes">
+						<ul>
+							<li>hard to go through all WCAG guidelines and criteria before delivering every feature</li>
+							<li>some tools we have been using</li>
+							<li>Chrome - not as comprehensive as other tools but nicely highlights elements</li>
+							<li>WAVE - tests contrast ratio, header hierarchy</li>
+							<li>Codesniffer - nice interface and most comprehensive</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>Automated testing</h3>
+					<p class="fragment">grunt-accessibility</p>
+					<p class="fragment">tenon.io</p>
+					<aside class="notes">
+						<ul>
+							<li>grunt-accessibility - runs on the command line with phantomjs headless browser</li>
+							<li>tenon.io comprehensive api which can be hooked into build process</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<img src="images/tumblr_mfsntgc2Wo1rw659vo1_400.jpg" />
+					<aside class="notes">
+						<ul>
+							<li>can't replace manual testing completely eg. alt text exists but does it </li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<p>Questions?</p>
+				</section>
+
+				<!-- /MATTH -->
 
 				<section>
 					<h2>cogapp.com</h2>
@@ -546,7 +663,7 @@
 						e.path[0].querySelector('img.subliminal').style.opacity = 0;
 					}, 600);
 				}, 2100);
-			});			
+			});
 
 		</script>
 	</body>
