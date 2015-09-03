@@ -211,7 +211,7 @@
 					<img src="images/owasp/owasp.png" style="float: right;" />
 					<h2>OWASP</h2>
 					<h3>5 out of 10</h3><br /><br /><br />
-					<p><small>Your host:&nbsp;&nbsp;Alex Bridge</small></p>
+					<p><small><i>Your host:&nbsp;&nbsp;Alex Bridge</i></small></p>
 				</section>
 
 				<section>
@@ -235,140 +235,129 @@
 				</section>
 
 				<section>
-					<section>
-						<h3>1. Injection</h3>
-						<p>Made possible when user input is passed directly to back-end systems (e.g. databases)</p>
-						<img src="images/owasp/bobbytables.png" />
-						<p>Can lead to data leaks, corruption and system takeover</p>
-						<aside class="notes">
-							<p>Commonplace & easy to exploit</p>
-							<p>Recent example: Drupalgeddon, a flaw in Drupal's DB library.<br />
-							This left all Drupal 7 sites vulnerable to complete takeover by hackers, and there was a huge scramble to patch sites.</p>
-						</aside>
-					</section>
-
-					<section>
-						<h3>Injection prevention</h3>
-						<ul>
-							<li class="fragment">Use parameterised APIs if available</li>
-							<li class="fragment">If no safe API, ensure all inputs are escaped</li>
-							<li class="fragment">Use whitelists of acceptable inputs over free text wherever possible</li>
-						</ul>
-						<aside class="notes">
-							<p>SQL injection most widely-known flaw</p>
-							<p>But can happen elsewhere, e.g. SMTP headers, LDAP</p>
-						</aside>
-					</section>
-				</section>
-
-
-				<section>
-					<section>
-						<h3>3. Cross-Site Scripting (XSS)</h3>
-						<p>Made possible when malicious input is output directly in pages to users</p>
-						<p>Attacker can execute scripts in a victim’s browser, making your site a source of malware</p>
-						<img src="images/owasp/xss-victims.jpg" />
-						<aside class="notes">
-							<p>This is the most widespread security flaw in web applications</p>
-							<p>Executing scripts means they can hijack user sessions & browsers, giving them the ability to do anything the user can do,
-							and potentially tricking them into revealing sensitive information</p>
-						</aside>
-					</section>
-
-					<section>
-						<h3>XSS prevention</h3>
-						<ul>
-							<li class="fragment">Use sanitisation routines if available</li>
-							<li class="fragment">Escape all data from users which might be output to a page</li>
-							<li class="fragment">Use whitelists of acceptable inputs over free text wherever possible</li>
-						</ul>
-						<aside class="notes">
-							Might look familiar to injection recommendations
-						</aside>
-					</section>
+					<h3>1. Injection</h3>
+					<p>Made possible when user input is passed directly to back-end systems (e.g. databases)</p>
+					<img src="images/owasp/bobbytables.png" />
+					<p>Can lead to data leaks, corruption and system takeover</p>
+					<aside class="notes">
+						<p>Commonplace & easy to exploit</p>
+						<p>Recent example: Drupalgeddon, a flaw in Drupal's DB library.<br />
+						This left all Drupal 7 sites vulnerable to complete takeover by hackers, and there was a huge scramble to patch sites.</p>
+					</aside>
 				</section>
 
 				<section>
-					<section>
-						<h3>5. Security misconfiguration</h3>
-						<p>This covers a wide variety of problems, including
-						<ul>
-							<li>Security settings in installed software not set correctly</li>
-							<li>Unnecessary software running</li>
-							<li>Insecure or unchanged-default passwords/accounts</li>
-						</ul>
-						<img src="images/owasp/hackingteam.png" />
-						<aside class="notes">
-							<p>Security settings - e.g. leaving Apache directory listings enabled</p>
-							<p>Hacking Team - a company that sells intrusion and surveillance capabilities to governments, law enforcement agencies and corporations
-							You might expect them to have their own house in order...</p>
-						</aside>
-					</section>
-					<section>
-						<h3>Avoiding security misconfiguration</h3>
-						<p>There's no one silver bullet - you need to build security into day-to-day work practices</p>
-						<ul>
-							<li class="fragment">Have a <em>repeatable</em> and <em>automated</em> hardening process for setting up environments</li>
-							<li class="fragment">Scan and audit systems regularly</li>
-							<li class="fragment">Enforce separation between system components to minimise impact of compromises</li>
-						</ul>
-
-						<aside class="notes">
-							Repeatable hardening process - this is where provisioning technologies like Ansible, Chef, Puppet etc. come in
-						</aside>
-					</section>
+					<h3>Injection prevention</h3>
+					<ul>
+						<li class="fragment">Use parameterised APIs if available</li>
+						<li class="fragment">If no safe API, ensure all inputs are escaped</li>
+						<li class="fragment">Use whitelists of acceptable inputs over free text wherever possible</li>
+					</ul>
+					<aside class="notes">
+						<p>SQL injection most widely-known flaw</p>
+						<p>But can happen elsewhere, e.g. SMTP headers, LDAP</p>
+					</aside>
 				</section>
 
 				<section>
-					<section>
-						<h3>6. Sensitive Data Exposure</h3>
-						<p>Sensitive data might include passwords, credit card numbers, other personal information.</p>
-						<img src="images/owasp/ashleymadison.jpeg" />
-						<p>This might be exposed by SQL injection, server exploit or a man-in-the-middle attack</p>
-						<aside class="notes">
-							<p>MITM could occur if pages handling sensitive data are sent in clear text, rather than encrypted using e.g. HTTPS</p>
-						</aside>
-					</section>
-					<section>
-						<h3>Avoiding sensitive data exposure</h3>
-						<ul>
-							<li class="fragment">Don't store what you don't need</li>
-							<li class="fragment">Ensure all sensitive data is securely encrypted, both at rest and when transmitted</li>
-							<li class="fragment">Disable autocomplete for sensitive forms & page caching for sensitive pages</li>
-						</ul>
-
-						<aside class="notes">
-							<p>Audit of Ashley Madison leak showed that passwords & credit cards were secured ok, but names, addresses & sexual preferences weren't.</p>
-							<p>This has opened people up to embarrassment, blackmail, and potentially persecution.</p>
-						</aside>
-					</section>
+					<h3>3. Cross-Site Scripting (XSS)</h3>
+					<p>Made possible when malicious input is output directly in pages to users</p>
+					<p>Attacker can execute scripts in a victim’s browser, making your site a source of malware</p>
+					<img src="images/owasp/xss-victims.jpg" />
+					<aside class="notes">
+						<p>This is the most widespread security flaw in web applications</p>
+						<p>Executing scripts means they can hijack user sessions & browsers, giving them the ability to do anything the user can do,
+						and potentially tricking them into revealing sensitive information</p>
+					</aside>
 				</section>
 
 				<section>
-					<section>
-						<h3>9. Using Components with Known Vulnerabilities</h3>
-						<p>This could potentially undermine all other security measures</p>
-						<img src="images/owasp/weaklink.jpg" />
-						<p class="fragment">Known vulnerabilities can be identified by automated scanning tools</p>
-						<aside class="notes">
-							Scanning tools means you can be hacked without a concerted effort on the part of the hacker
-						</aside>
-					</section>
-					<section>
-						<h3>Avoiding use of vulnerable components</h3>
-						<ul>
-							<li class="fragment">Record all software you're using, including version numbers</li>
-							<li class="fragment">Monitor these for updates</li>
-							<li class="fragment">Have a process to quickly roll out updates</li>
-							<li class="fragment">Have a policy for what software components are/aren't acceptable</li>
-						</ul>
+					<h3>XSS prevention</h3>
+					<ul>
+						<li class="fragment">Use sanitisation routines if available</li>
+						<li class="fragment">Escape all data from users which might be output to a page</li>
+						<li class="fragment">Use whitelists of acceptable inputs over free text wherever possible</li>
+					</ul>
+					<aside class="notes">
+						Might look familiar to injection recommendations - DON'T TRUST USER INPUT!
+					</aside>
+				</section>
 
-						<aside class="notes">
-							<p>Monitoring might include subscribing to mailing lists or code repositories</p>
-							<p>Process for rolling out updates might include configuring servers to auto-apply security patches; Ansible etc can also help again here</p>
-							<p>Policy for software might enforce e.g. no alpha/beta software; code having passed audit</p>
-						</aside>
-					</section>
+				<section>
+					<h3>5. Security misconfiguration</h3>
+					<p>This covers a wide variety of problems, including
+					<ul>
+						<li>Security settings in installed software not set correctly</li>
+						<li>Unnecessary software running</li>
+						<li>Insecure or unchanged-default passwords/accounts</li>
+					</ul>
+					<img src="images/owasp/hackingteam.png" />
+					<aside class="notes">
+						<p>Security settings - e.g. leaving Apache directory listings enabled</p>
+						<p>Hacking Team - a company that sells intrusion and surveillance capabilities to governments, law enforcement agencies and corporations
+						You might expect them to have their own house in order...</p>
+					</aside>
+				</section>
+				<section>
+					<h3>Avoiding security misconfiguration</h3>
+					<p>There's no one silver bullet - you need to build security into day-to-day work practices</p>
+					<ul>
+						<li class="fragment">Have a <em>repeatable</em> and <em>automated</em> hardening process for setting up environments</li>
+						<li class="fragment">Scan and audit systems regularly</li>
+						<li class="fragment">Enforce separation between system components to minimise impact of compromises</li>
+					</ul>
+
+					<aside class="notes">
+						Repeatable hardening process - this is where provisioning technologies like Ansible, Chef, Puppet etc. come in
+					</aside>
+				</section>
+
+				<section>
+					<h3>6. Sensitive Data Exposure</h3>
+					<p>Sensitive data might include passwords, credit card numbers, other personal information.</p>
+					<img src="images/owasp/ashleymadison.jpeg" />
+					<p>This might be exposed by SQL injection, server exploit or a man-in-the-middle attack</p>
+					<aside class="notes">
+						<p>MITM could occur if pages handling sensitive data are sent in clear text, rather than encrypted using e.g. HTTPS</p>
+					</aside>
+				</section>
+				<section>
+					<h3>Avoiding sensitive data exposure</h3>
+					<ul>
+						<li class="fragment">Don't store what you don't need</li>
+						<li class="fragment">Ensure all sensitive data is securely encrypted, both at rest and when transmitted</li>
+						<li class="fragment">Disable autocomplete for sensitive forms & page caching for sensitive pages</li>
+					</ul>
+
+					<aside class="notes">
+						<p>Audit of Ashley Madison leak showed that passwords & credit cards were secured ok, but names, addresses & sexual preferences weren't.</p>
+						<p>This has opened people up to embarrassment, blackmail, and potentially persecution.</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3>9. Using Components with Known Vulnerabilities</h3>
+					<p>This could potentially undermine all other security measures</p>
+					<img src="images/owasp/weaklink.jpg" />
+					<p class="fragment">Known vulnerabilities can be identified by automated scanning tools</p>
+					<aside class="notes">
+						Scanning tools means you can be hacked without a concerted effort on the part of the hacker
+					</aside>
+				</section>
+				<section>
+					<h3>Avoiding use of vulnerable components</h3>
+					<ul>
+						<li class="fragment">Record all software you're using, including version numbers</li>
+						<li class="fragment">Monitor these for updates</li>
+						<li class="fragment">Have a process to quickly roll out updates</li>
+						<li class="fragment">Have a policy for what software components are/aren't acceptable</li>
+					</ul>
+
+					<aside class="notes">
+						<p>Monitoring might include subscribing to mailing lists or code repositories</p>
+						<p>Process for rolling out updates might include configuring servers to auto-apply security patches; Ansible etc can also help again here</p>
+						<p>Policy for software might enforce e.g. no alpha/beta software; code having passed audit</p>
+					</aside>
 				</section>
 
 				<section>
